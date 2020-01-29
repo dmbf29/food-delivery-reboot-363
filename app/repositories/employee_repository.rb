@@ -14,7 +14,13 @@ class EmployeeRepository
     @employees.find { |employee| employee.username == username }
   end
 
-  # def find(id)
+  def find(id)
+    @employees.find { |employee| employee.id == id }
+  end
+
+  def delivery_guys
+    @employees.select { |employee| employee.role == 'delivery_guy' }
+  end
 
   private
 

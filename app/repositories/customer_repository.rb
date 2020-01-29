@@ -20,6 +20,11 @@ class CustomerRepository
     save_csv
   end
 
+  def find(id)
+    # should return 1 instance of a meal
+    @customers.find { |customer| customer.id == id }
+  end
+
   private
 
   def load_csv
